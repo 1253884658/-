@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title></title>
+ <!-- 导入 vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<!-- div -->
+<div id="app">
+ <span>{{msg}}</span>
+ <hr>
+ <table border="1">
+  <tr>
+   <td>用户名</td>
+   <td>
+    <input type="text" name="username" id="username" v-model="user">
+   </td>
+  </tr>
+  <tr>
+   <td>密码</td>
+   <td>
+    <input type="password" name="password" v-model="psw">
+   </td>
+  </tr>
+  <tr>
+   <td>性别</td>
+   <td>
+    男 <input type="radio" name="sex" value="boy" v-model="sex">
+    女  <input type="radio" name="sex" value="girl" v-model="sex">
+   </td>
+  </tr>
+  <tr>
+   <td>爱好</td>
+   <td>
+    篮球  <input type="checkbox" name="like" value="篮球" v-model="like">
+    足球  <input type="checkbox" name="like" value="足球" v-model="like">
+    乒乓球 <input type="checkbox" name="like" value="乒乓球" v-model="like">
+   </td>
+  </tr>
+  <tr>
+   <td>城市</td>
+   <td>
+    <select v-model="city">
+     <option value="bj">北京</option>
+     <option value="sh">上海</option>
+     <option value="sz">深圳</option>
+    </select>
+   </td>
+  </tr>
+  <tr>
+   <td>个人简介</td>
+   <td>
+    <textarea v-model="deco"></textarea>
+   </td>
+  </tr>
+ </table>
+ <!-- 注册按钮没有在table里 -->
+ <button v-on:click="register">注册</button>
+</div>
+</body>
+<!-- 创建vue实例 -->
+<script type="text/javascript">
+ // Vue 的v要大写
+ var vm = new Vue({
+  el: '#app',
+  data: {
+   msg: 'hello',
+   user: "",
+   psw:"",
+   sex:"",
+   city:"",
+   like:[],
+   deco:""
+
+  },
+  methods: {
+      register:function(){
+          alert(this.user+this.psw+this.sex+this.city+this.deco+this.like)
+      }
+
+  }
+ })
+</script>
+</html>

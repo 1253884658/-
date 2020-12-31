@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a href="#">{{msg}}</a>
+        <hr>
+        <ul>
+            <li v-for="item in shoes">{{item}}</li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="(value,item) in shoes">{{value}}--索引{{item}}</li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="(value,item) in shoes">{{value}}--索引{{item+1}}</li>
+        </ul>
+        <button v-on:click="register(5)">注册</button>
+    </div>
+</body>
+<script type="text/javascript">
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:"Hello",
+            shoes:["男鞋","女鞋","高跟鞋","低跟鞋"]
+        },
+        methods:{
+            register: function(num){
+                alert(num)
+            }
+        }
+    })
+    </script>
+</html>
